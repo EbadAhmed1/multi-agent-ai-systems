@@ -1,13 +1,13 @@
 import modal
 from modal import App, Image
 
-# Setup - define our infrastructure with code!
+# Setup 
 
 app = modal.App("pricer-service")
 image = Image.debian_slim().pip_install("torch", "transformers", "bitsandbytes", "accelerate", "peft")
 
 # This collects the secret from Modal.
-# Depending on your Modal configuration, you may need to replace "hf-secret" with "huggingface-secret"
+
 secrets = [modal.Secret.from_name("hf-secret")]
 
 # Constants
@@ -15,7 +15,7 @@ secrets = [modal.Secret.from_name("hf-secret")]
 GPU = "T4"
 BASE_MODEL = "meta-llama/Meta-Llama-3.1-8B"
 PROJECT_NAME = "pricer"
-HF_USER = "ed-donner" # your HF name here! Or use mine if you just want to reproduce my results.
+HF_USER = "ed-donner" 
 RUN_NAME = "2024-09-13_13.04.39"
 PROJECT_RUN_NAME = f"{PROJECT_NAME}-{RUN_NAME}"
 REVISION = "e8d637df551603dc86cd7a1598a8f44af4d7ae36"
