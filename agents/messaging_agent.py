@@ -5,7 +5,7 @@ import http.client
 import urllib
 from agents.agent import Agent
 
-# Uncomment the Twilio lines if you wish to use Twilio
+
 
 DO_TEXT = False
 DO_PUSH = True
